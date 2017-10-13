@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>双飞翼布局</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		header{
+			width: 80%;
+			height: 50px;
+			background-color: rgb(101,24,98);
+			border: 10px solid rgb(66,102,201);
+		}
+		footer{
+			width: 80%;
+			height: 50px;
+			background-color: rgb(94,69,210);
+			border: 10px solid rgb(66,102,201);
+		}
+		.container{
+			width: 80%;
+			height: 600px;
+			border: 10px solid rgb(201,102,201);
+		}
+		article, nav, aside{
+			float: left;
+		}
+		article{
+			width: 100%;
+			height: 600px;
+			background-color: rgb(98,101,56);
+		}
+		nav{
+			width: 50px;
+			height: 600px;
+			background-color: rgb(101,36,201);
+			margin-left: -100%;
+		}
+		aside{
+			width: 100px;
+			height: 600px;
+			background-color: rgb(124,69,200);
+			margin-left: -100px;
+		}
+		.content{
+			margin: 0 100px 0 50px;
+		}
+	</style>
+</head>
+<body>
+	<header></header>
+
+	<div class="container">
+		<article>
+			<!-- 
+			双飞翼布局和圣杯布局的区别就是双飞翼布局把article又放入到了另一个
+			盒子中并设置外边距来让这个盒子可以被正确显示
+			-->
+				<div class="content">
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				</div>
+		</article>
+		<nav>nav区域，我用来检测一下左右内边距和内容是否显示问题</nav>
+		<aside>aside区域，我用来检测一下左右内边距和内容是否显示问题</aside>
+	</div>
+
+	<footer></footer>
+</body>
+</html>
