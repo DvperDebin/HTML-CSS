@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>导航条</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.nav{
+			width: 80%;
+			/*
+				height: 23px; 这里无需设置高度，但是不设置高度就会有高度塌陷问题
+				因为子级因为字体大小的关系而有了高度，同时设置了浮动
+			*/ 
+			background-color: rgb(123,35,98);
+			margin: 30px auto 0;
+			/* 所以在这里我们来解决高度塌陷的问题*/
+			overflow: hidden;
+		}
+		.product{
+			list-style: none;
+			float: left;
+			width: 24.95%;
+			
+		}
+		.nav-a{
+			display: inline-block;
+			text-decoration: none;
+			color: white;
+			text-align: center;
+			width: 100%;
+		}
+		.nav-a:hover{
+			color: lightgray;
+			background-color: #8B658B;
+		}
+		.pad{
+			border-right: 1px solid #9e9e9e;
+		}
+		#footer{
+			width: 80%;
+			height: 80px;
+			border-top: 1px solid lightgray;
+			background-color: white;
+			position: fixed;
+			bottom: 0; /* 此区域靠下固定位置*/
+			margin: 0 auto; /*这三行可以将固定定位的内容居中*/
+			left: 0;        /*这三行可以将固定定位的内容居中*/
+			right: 0;       /*这三行可以将固定定位的内容居中*/
+			padding: 25px 0;
+			text-align: center;
+			
+		}
+		.shadow{
+			/* 以图片作为背景并且在图片大小不足情况下不平铺
+				方向是垂直居中*/
+			background: url(img/shadow.png) no-repeat center top;
+			/* 使用绝对定位的原因就是可以决定图片位置*/
+			position: absolute; 
+			left: 0;			
+			top: -32px;		
+			/* 这里设置宽和高*/	
+			width: 100%;
+			height: 32px;
+		}
+		.footer-a{
+			width: 107px;
+			height: 40px;
+			display: inline-block;
+			text-decoration: none;
+			color: white;
+			font-size: 14px;
+			line-height: 40px;
+			text-align: left;
+			padding: 0 0 0 54px;
+			margin: 0 10px 0 0;
+		}
+		/* 定位雪碧图*/
+		.mailtag {
+            background: url(img/btn.png) no-repeat -310px -461px;
+        }
+        .sinatag {
+            background: url(img/btn.png) no-repeat -1px -601px;
+        }
+        .qqtag {
+            background: url(img/btn.png) no-repeat -1px -651px;
+        }
+        .weixintag {
+            background: url(img/btn.png) no-repeat -213px -1191px;
+        }
+        /* 视窗容器*/
+        .container{
+        	border: 10px solid lightblue;
+        	width: 600px;
+        	height: 375px;
+        	/* 将溢出容器的内容隐藏 */
+        	overflow: hidden;
+        	/*给视窗一个位置定位*/
+        	position: absolute;
+        	left: 650px;
+        	top: 250px;
+        }
+        /* 图片储存容器，图片因为向左float所以横排排列，容器要包含所有的图片
+			所以宽度时2400px，通过设置定位来完成图片轮播效果
+        */
+        .picstore{
+        	width: 2400px;
+        	position: absolute;
+        	left: -600px;
+        }
+        img{
+        	width: 600px;
+        	float: left;
+        }
+	</style>
+</head>
+<body>
+	<nav>
+		<ul class="nav">
+			<li class="product pad"><a class="nav-a"  href="#">mackbook pro</a></li>
+			<li class="product pad"><a class="nav-a" href="#">macbook air</a></li>
+			<li class="product pad"><a class="nav-a" href="#">surface pro</a></li>
+			<li class="product"><a class="nav-a" href="#">surface book</a></li>
+		</ul>
+	</nav>
+	<main>
+		<div class="container">
+			<div class="picstore">
+				<img src="img/01.jpg">
+				<img src="img/02.jpg">
+				<img src="img/03.jpg">
+				<img src="img/04.jpg">
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div id="footer">
+			<a class="footer-a mailtag" href="#">邮箱注册</a>
+			<a class="footer-a sinatag" href="#">新浪注册</a>
+			<a class="footer-a qqtag" href="#">腾讯注册</a>
+			<a class="footer-a weixintag" href="#">微信注册</a>
+			<span class="shadow"></span>
+		</div>
+	</footer>
+</body>
+</html>

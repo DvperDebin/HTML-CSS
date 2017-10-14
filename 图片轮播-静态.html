@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>静态图片轮播</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.container{
+			/* 视窗一次显示一张图片，所以视窗宽度应该与图片被设置的宽度一致*/
+			width: 600px;
+			/* 设置高度 */
+			height: 375px;
+			border: 10px solid red;
+			margin: 0 auto;
+			position: relative;
+			/* 图片储存器内容过大溢出父级容器，使用overflow解决溢出问题 */
+			overflow: hidden;
+		}
+		.picstore{
+			/* 
+				图片储存器储存所有水平排列的图片，
+				所以宽度为所有图片的宽度之和
+			*/
+			width: 2400px;
+			/* 
+				我们需要图片在最前层显示，同时需要一个相对于父级的绝对定位
+				这样才能保证所有图片在视窗中
+			*/
+			position: absolute;
+			/*
+				left为0，就是第一张图片，现在情况就是：
+				视窗在页面居中，2400px宽的图片储存器与视窗在同一位置
+				并且前600px宽的空间重叠，这样就会导致第一张图片在视窗中正确显示，剩下三张图片在右边排列
+				left为-600px，就整体向左移动，所以第二张图片在视窗中显示，第一张在左侧溢出，第三四张在右侧溢出
+			*/
+			left: 0;
+		}
+		/* 首先设置图片水平排列以及宽度，高度以视窗高度为准 */
+		img{
+			float: left;
+			width: 600px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 容器，可视化窗口,用来显示 -->
+	<div class="container">
+		<!-- 图片储存器，用来储存 -->
+		<div class="picstore">
+			<img src="img/01.jpg">
+			<img src="img/02.jpg">
+			<img src="img/03.jpg">
+			<img src="img/04.jpg">
+		</div>
+	</div>
+</body>
+</html>
