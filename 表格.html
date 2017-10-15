@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表格</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		table,thead,tbody,tr,th,td{
+			border: 1px solid red;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<caption>表格练习</caption>
+		<thead>
+			<tr>
+				<th>th1</th>
+				<th>th2</th>
+				<th>th3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>r1c1</td>
+				<td colspan="2">r1c2 + r1c3</td>
+			</tr>
+			<tr>
+				<td rowspan="2">r2c1 + r3c1</td>
+				<td>r2c2</td>
+				<td>r2c3</td>
+			</tr>
+			<tr>
+				<td>r3c2</td>
+				<td>r3c3</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>标签页</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.container{
+			width:80%;
+			margin: 0 auto;
+		}
+		ul{
+			border-bottom: 1px solid #ddd;
+			/* 子级浮动，父级没浮动，高度塌陷, 解决高度塌陷*/
+			/*overflow: hidden; 但是这里不能用这个方法解决高度塌陷问题*/
+			/* 同时解决内容溢出和高度塌陷 */
+			float:left;
+			
+		}
+		ul>li{
+			list-style: none;
+			float: left;
+			/*
+				思路是利用li下边框的透明色去覆盖ul的下边框颜色
+			*/
+			border: 1px solid transparent;
+			/*
+				下外边距-1像素相当于父级向上移动了1像素，也就会形成
+				li的下外边距覆盖掉了ul的下外边距，因为下边框的像素
+				都是1
+			*/
+			margin-bottom: -1px;
+		}
+		.margin{
+			margin-right: 25px;
+		}
+		a{	
+			display: block;
+			/* 每一块的边框都是透明色*/
+			text-decoration: none;
+			color: black;
+
+		}
+		.selected{
+			border: 1px solid #ddd;
+			/*被选定的选项下边距为透明，即为背景色*/
+			border-bottom-color: transparent;
+			/* 背景色不要忘记设定！！！ 否则无效*/
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<ul>
+			<li class="margin selected"><a href="#">mackbook pro</a></li>
+			<li class="margin"><a href="#">mackbook air</a></li>
+			<li class="margin"><a href="#">surface book</a></li>
+			<li><a href="#">surface pro</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>
