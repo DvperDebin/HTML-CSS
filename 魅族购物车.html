@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>魅族购物车</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		@font-face{
+			/* 定义网络字体的字体系列名称 */
+            font-family: layout-font;
+            /* 引入指定的网络字体文件 */
+            src: url(font/iconfont-7fe3aaa151.eot);
+            src: url(font/iconfont-7fe3aaa151.eot#iefix) format("embedded-opentype"), url(font/iconfont-d91c6d8c6e.woff) format("woff"), url(font/iconfont-43e1f7b40d.ttf) format("truetype")
+		}
+		.shop-cart-font{
+			font-family: layout-font;
+			margin-left: -5px;
+            font-size: 30px;
+		}
+		.shop-cart-font::before{
+			content: "\E635";
+		}
+		.shop-cart-link{
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			width: 24px;
+			height: 24px;
+			color: #666;
+			text-decoration: none;
+		}
+		.shop-cart-num{
+			position: absolute;
+			left: 8px;
+			top: 0;
+			font-size: 12px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="shop-cart">
+		<a href="#" class="shop-cart-link">
+			<span class="shop-cart-font"></span>
+			<span class="shop-cart-num">0</span>
+		</a>
+	</div>
+</body>
+</html>

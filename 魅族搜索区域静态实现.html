@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>导航搜索框</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		/* 对搜索区域的大边框进行设置 */
+		.search-border{
+			/* 边框设置*/
+			border: 1px solid gray;
+			width: 180px;
+			/* 四角圆滑度*/
+			border-radius: 20px;
+			/* 高度 */
+			height: 30px;
+			/* 行高 */
+			line-height: 28px;
+			text-align: right;
+		}
+		.search-search-area{
+			/* 一个隐藏边框的文本域 */
+			border: none;
+			/* 文本域设置 */
+			width: 135px;
+			height: 20px;
+			margin-left: 10px;
+			/* 焦点时不显示文本域轮廓 */
+			outline: 0;
+			vertical-align: middle;
+			line-height: 20px;
+			/* 用户输入的文字颜色 */
+			color: #ddd;
+		}
+		/* 搜索区域右边的放大镜图片，其实是以文字显示的*/
+		.search-image{
+			vertical-align: middle;
+			font-family: layout-font!important;
+			/*设置大小*/
+			font-size: 18px;
+			/* 位置调整 */
+			margin-right: 9px;
+			/* 鼠标悬停效果 */
+			cursor: pointer;
+		}
+		/* 内容编译 */
+		.search-image::before{
+			content: "\E634";
+		}
+		/* 引入网络字体，放大镜图片其实就是这在这个网络字体中*/
+		@font-face {
+            /* 定义网络字体的字体系列名称 */
+            font-family: layout-font;
+            /* 引入指定的网络字体文件 */
+            src: url(font/iconfont-7fe3aaa151.eot);
+            src: url(font/iconfont-7fe3aaa151.eot#iefix) format("embedded-opentype"), url(font/iconfont-d91c6d8c6e.woff) format("woff"), url(font/iconfont-43e1f7b40d.ttf) format("truetype")
+        }
+        
+	</style>
+</head>
+<body>
+	
+	<div class="search-border">
+		<input type="text" name="search" class="search-search-area" placeholder="魅蓝6">
+		<span class="search-image"></span>
+	</div>
+	
+</body>
+</html>
