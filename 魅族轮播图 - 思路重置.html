@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>魅族轮播图</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		body{
+			margin:0;
+			padding: 0;
+		}
+		.img{
+			width: 1920px;
+			height: 480px;
+			position: relative;
+			/* 向左移动了父级宽度50%的距离*/
+			left: 50%;
+			/* 
+				因为本身a元素居中，又向右移动了50%的a元素的宽度
+				所以现在图片最左边应该是在屏幕的最中间位置，也就是中轴线上
+				所以我们再向左移动图片的50%，回到屏幕最左边
+			*/
+			transform: translateX(-50%);
+
+		}
+		.img-link{
+			display: block;
+			width: 1240px;
+			height: 480px;
+			margin: 0 auto;
+		}
+		.img-viewport{
+			width: 1920px;
+			height: 480px;
+			float: left;
+			overflow: hidden;
+		}
+		.img-store{
+			width: 13440px;
+			height: 480px;
+			overflow: hidden;
+			position: absolute;
+			left: -1920px;
+		}
+		.viewport-container{
+			width: 100%;
+			height: 480px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		/* 菜单块 */
+		.menu-ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			background-color: rgba(248,247,247,0.8);
+			width: 244px;
+			height: 480px;
+			padding: 12px 0 0 0;
+			box-sizing: border-box;
+		}
+		.menu-li-a{
+			text-decoration: none;
+			color: black;
+			display: block;
+			padding: 0 30px;
+		}
+		.menu-li{
+			height: 55px;
+			line-height: 55px;
+		}
+		.menu-li:hover{
+			background-color: white;
+		}
+		.menu-container{
+			height: 480px;
+			width: 1240px;
+			position: absolute;
+			left: 50%;
+			top: 0;
+			transform: translateX(-50%);
+		}
+	</style>
+</head>
+<body>
+	<div class="body-container">
+		<!-- 一个大视窗 -->
+		<div class="viewport-container">
+			<!-- 图片储藏器 -->
+			<div class="img-store">
+				<!-- 每张图片的视窗 -->
+				<div class="img-viewport">
+					<!-- 每张图片都有超链接，并且设置大小和居中 -->
+					<a href="#" class="img-link">
+						<!-- 真正的图片内容 -->
+						<img src="img/1.jpg" class="img">
+					</a>
+				</div>
+				
+				<!-- 第二张图  -->
+				<div class="img-viewport">
+					<a href="#" class="img-link">
+						<img src="img/2.jpg" class="img">
+					</a>
+				</div>
+				<!-- 第三张图 -->
+				<div class="img-viewport">
+					<a href="#" class="img-link">
+						<img src="img/3.png" class="img">
+					</a>
+				</div>
+				<!-- 第四张图 -->
+				<div class="img-viewport">
+					<a href="#" class="img-link">
+						<img src="img/4.jpg" class="img">
+					</a>
+				</div>
+				<!-- 第五张图 -->
+				<div class="img-viewport">
+					<a href="#" class="img-link">
+						<img src="img/5.jpg" class="img">
+					</a>
+				</div>
+				<!-- 第六张图 -->
+				<div class="img-viewport">
+					<a href="#" class="img-link">
+						<img src="img/6.png" class="img">
+					</a>
+				</div>
+				<!-- 第七张图 -->
+				<div class="img-viewport">
+					<a href="#" class="img-link">
+						<img src="img/7.jpg" class="img">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 这是覆盖菜单 -->
+		<div class="menu-container">
+			<ul class="menu-ul">
+				<li class="menu-li">
+					<a href="#" class="menu-li-a">
+						手机
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-a">
+						智能设备
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-a">
+						智能穿戴
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-a">
+						游戏设备
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-a">
+						数码影音
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-a">
+						手机配件/移动电源
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-a">
+						移动存储/办公设备
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-a">
+						生活周边
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

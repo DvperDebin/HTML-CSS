@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>魅族-图片轮播</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body {
+            margin: 0;
+            font-family: "PingFang SC", "\5FAE\8F6F\96C5\9ED1", "Microsoft Yahei", Arial, Helvetica, sans-serif, "\5B8B\4F53";
+            font-size: 14px;
+            min-width: 1240px;
+            min-height: 100%;
+
+            height: 1000px;
+        }
+        i {
+            font-style: normal;
+        }
+        /* 引入网络字体 - 使用字体系列时，脱离当前操作系统所限制的字体样式 */
+        @font-face {
+            /* 定义网络字体的字体系列名称 */
+            font-family: layout-font;
+            /* 引入指定的网络字体文件 */
+            src: url(font/iconfont-7fe3aaa151.eot);
+            src: url(font/iconfont-7fe3aaa151.eot#iefix) format("embedded-opentype"), url(font/iconfont-d91c6d8c6e.woff) format("woff"), url(font/iconfont-43e1f7b40d.ttf) format("truetype")
+        }
+
+		.container-viewport{
+			width: 100%;
+			height: 480px;
+			overflow: hidden;
+			position: relative;
+		}
+		/* 图片存储器 */
+		.picstore{
+			/* 
+				1920 * 7，这个1920并不是图片的大小！
+				而是每张图片的视窗大小！
+			*/
+			width: 13440px;
+			height: 480px;
+			/* 因为包含图片的视窗浮动了，所以要解决高度塌陷问题*/
+			overflow: hidden;
+			/* 在最外视窗上移动图片储存器来达到对图片的轮播效果*/
+			position: absolute;
+			left: -1920px;
+		}
+		
+		/* 每张图片的设置 */
+		.piccast-pic{
+			/* 高宽都是原图大小*/
+			width: 1920px;
+			height: 480px;
+			/* 需要让图片靠左，同时水平居中，所以进行定位平移*/
+			position: relative;
+			/* 相对于自身向右移动父级元素a的50%宽度的距离*/
+			left: 50%;
+			/* 
+				因为本身a元素居中，又向右移动了50%的a元素的宽度
+				所以现在图片最左边应该是在屏幕的最中间位置，也就是中轴线上
+				所以我们再向左移动图片的50%，回到屏幕最左边
+			*/
+			transform: translateX(-50%);
+		}
+		.pic-link{
+			/* 魅族官网给的定值 */
+			width: 1240px;
+			height: 480px;
+			/* 设置高宽有效 */
+			display: block;
+			/* 
+				设置a元素区域居中，然后左边显示出了空白区域，
+				a元素居中了，但是图片因为a元素居中，左边产生了空白区域
+				导致图片没有居中
+			*/
+			margin: 0 auto;
+		}
+		/* 	
+			一张图片的视窗大小，即为用户设备视窗大小，想要在最终的视窗里移动图片，其实就是要移动这个每张图片的小视窗。
+		*/
+		.pic-viewport{
+			/* 所以宽为100%，即为视窗宽度*/
+			/*width: 100%; 因为外层容器的设置，这里不能再是100%的宽度了*/
+			width: 1920px;
+			/* 定高 */
+			height: 480px;
+			/* 消除左右滚动条*/
+			overflow: hidden;
+			/* 
+				设置浮动，因为它包含的a元素和图片元素都是块级元素了
+				所以设置这个浮动和设置我们原来用的图片浮动效果是一样的
+			*/
+			float: left;
+		}
+		/* 
+			菜单部分,思路就是我们在无序列表外层再加一个容器
+			把这个容器就像之前的轮播图的a元素一样居中
+			最后让这个容器中的无序列表紧贴左侧
+		 */
+		.menu-ul{
+			/* 大小 */
+			width: 244px;
+			height: 468px;
+			background-color: rgba(248,247,247,0.8);
+			/* 定位 */
+			/*position: absolute;
+			left: 50%;
+			top: 0;*/
+			/* reset ul属性*/
+			margin: 0;
+			list-style: none;
+			/*margin-left: -620px;*/
+			padding: 0;
+			padding: 12px 0 0 0;
+		}
+		.container-menu{
+			/*margin: 0 auto;*/
+			width: 1240px;
+			/* 绝对定位后，margin无效*/
+			position: absolute;
+			left: 50%;
+			top: 0;
+			transform: translateX(-50%);	
+		}
+		.menu-li{
+			height: 57px;
+			line-height: 57px;
+			background-color: transparent;
+		}
+		.menu-li:hover{
+			background-color: white;
+		}
+		.menu-li-link{
+			padding: 0 30px;
+			display: block;
+			color: #333;
+			height: 100%;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="body-container">
+		<!-- 图片轮播视窗 -->
+		<div class="container-viewport"> 
+			<!-- 图片的储存器 -->
+			<div class="picstore"> 
+				<!-- 每一张图给予一个视窗，这样就会根据大小裁取图片 -->
+				<div class="pic-viewport">
+					<!-- a元素因为超链接效果同时包含图片 -->
+					<a href="#" class="pic-link"><img src="img/1.jpg" class="piccast-pic"></a>
+				</div>
+				<!-- 第二张图  -->
+				<div class="pic-viewport">
+					<a href="#" class="pic-link"><img src="img/2.jpg" class="piccast-pic"></a>
+				</div>
+				<!-- 第三张图  -->
+				<div class="pic-viewport">
+					<a href="#" class="pic-link"><img src="img/3.png" class="piccast-pic"></a>
+				</div>
+				<!-- 第四张图  -->
+				<div class="pic-viewport">
+					<a href="#" class="pic-link"><img src="img/4.jpg" class="piccast-pic"></a>
+				</div>
+				<!-- 第五张图  -->
+				<div class="pic-viewport">
+					<a href="#" class="pic-link"><img src="img/5.jpg" class="piccast-pic"></a>
+				</div>
+				<!-- 第六张图  -->
+				<div class="pic-viewport">
+					<a href="#" class="pic-link"><img src="img/6.png" class="piccast-pic"></a>
+				</div>
+				<!-- 第七张图  -->
+				<div class="pic-viewport">
+					<a href="#" class="pic-link"><img src="img/7.jpg" class="piccast-pic"></a>
+				</div>
+		 	</div>
+		</div>
+		<!-- 这是左侧覆盖轮播图一部分的主体菜单 -->
+		<div class="container-menu">
+			<ul class="menu-ul">
+				<li class="menu-li">
+					<a href="#" class="menu-li-link">手机</a>
+				</li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-link">智能设备</a></li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-link">智能穿戴</a></li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-link">游戏设备</a></li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-link">数码影音</a></li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-link">手机配件/移动电源</a></li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-link">移动存储/办公设备</a></li>
+				<li class="menu-li">
+					<a href="#" class="menu-li-link">生活周边</a></li>
+			</ul>
+		</div>
+	</div> 
+</body>
+</html>
