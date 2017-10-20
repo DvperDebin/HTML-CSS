@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>轮播图复习</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		/* 首先考虑图片大小 */
+		.pic{
+			width: 1920px;
+			height: 480px;
+			/* 超链接导致这里需要移动 */
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		/* 再考虑超链接效果问题*/
+		.pic-link{
+			display: block;
+			width: 1240px;
+			height: 480px;
+			margin: 0 auto;
+		}
+		/* 再考虑视窗问题 */
+		.pic-viewport{
+		/*width: 100%; 因为设置了图片储藏器大小所以这里的视窗宽度要定宽了*/
+			width: 1920px;
+			height: 480px;
+			overflow: hidden;
+			float: left;
+	
+		}
+		/* 最后是图片储存器问题*/
+		.picstore{
+			overflow: hidden;
+			width: 3840px;
+			position: absolute;
+			left: -1920px;
+		}
+		/* 以及最外层的视窗问题 */
+		.outer-viewport{
+			width: 100%;
+			height: 480px;
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+
+<div class="body-container">
+	<!-- 一个外层视窗 -->
+	<div class="outer-viewport">
+		<!-- 一个图片存储器 -->
+		<div class="picstore">
+			<!-- 每张图片上的一个视窗 -->
+			<div class="pic-viewport">
+				<a href="#" class="pic-link">
+					<img src="img/1.jpg" class="pic">
+				</a>
+			</div>
+
+			<!-- 每张图片上的一个视窗 -->
+			<div class="pic-viewport">
+				<a href="#" class="pic-link">
+					<img src="img/2.jpg" class="pic">
+				</a>
+			</div> 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>一个二级菜单</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		/* 一级菜单 */
+		.level1-menu{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			border: 1px solid red;
+			overflow: hidden;
+			width: 70%;
+			margin: 0 auto;
+			background-color: #ddd;
+		}
+		.level1-link{
+			display: block;
+			text-decoration: none;
+			color: #9d9d9d;
+			text-align: center;
+		}
+		.level1-link:hover{ 
+			color:#f00; 
+		}
+		.level1-li{
+			float: left;
+			border-right: 1px solid #ccc;
+			width: 19.94%;
+		}
+		.level1-li:last-child{
+			border: none;
+		}
+		/* 二级菜单 */
+		.level2-menu{
+			position: absolute;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: none;
+			background-color: #ddd;
+		}
+		.level2-menu li{
+			width: 265.75px;
+			text-align: center;
+		}
+		.level2-menu:first-child{
+			border: none;
+		}
+		.level1-li:hover .level2-menu{
+			display: block;
+		}
+		.level2-menu-link{
+			text-decoration: none;
+			color: black;
+			display: block;
+			border-top: 1px solid blue;
+		}
+		.level2-menu-link:hover{
+			color: #9d9d9d;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul class="level1-menu">
+			<li class="level1-li">
+				<a href="#" class="level1-link">一级菜单1</a>
+					<ul class="level2-menu">
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单1.1</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单1.2</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单1.3</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单1.4</li>
+					</ul>
+				</a>
+			</li>
+			<li class="level1-li">
+				<a href="#" class="level1-link">一级菜单2</a>
+					<ul class="level2-menu">
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单2.1</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单2.2</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单2.3</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单2.4</li>
+					</ul>
+				</a>
+			</li>
+			<li class="level1-li">
+				<a href="#" class="level1-link">一级菜单3</a>
+					<ul class="level2-menu">
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单3.1</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单3.2</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单3.3</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单3.4</li>
+					</ul>
+				</a>
+			</li>
+			<li class="level1-li">
+				<a href="#" class="level1-link">一级菜单4</a>
+					<ul class="level2-menu">
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单4.1</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单4.2</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单4.3</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单4.4</li>
+					</ul>
+				</a>
+			</li>
+			<li class="level1-li">
+				<a href="#" class="level1-link">一级菜单5</a>
+					<ul class="level2-menu">
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单5.1</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单5.2</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单5.3</li></a>
+						<a href="#" class="level2-menu-link"><li class="menu2-li">二级菜单5.4</li>
+					</ul>
+				</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
